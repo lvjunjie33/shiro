@@ -1,0 +1,51 @@
+package com.springboot.pojo;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+/**
+ *  角色实体
+ * @author lvjj
+ */
+public class RoleInfo implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
+	private int id;//主键
+	private String roleName;//角色名称
+	private int status;//状态（0，禁用；1，可用）
+	private List<RoleUser> roleUsers;
+	
+	
+
+	public List<RoleUser> getRoleUsers() {
+		return roleUsers;
+	}
+	public void setRoleUsers(List<RoleUser> roleUsers) {
+		this.roleUsers = roleUsers;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getRoleName() {
+		return roleName;
+	}
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	
+	
+	
+}

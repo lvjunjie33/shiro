@@ -1,0 +1,10 @@
+package com.springboot.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.springboot.pojo.UserInfo;
+
+@Mapper
+public interface UserMapper {
+	UserInfo findByUserName(String userName);
+}

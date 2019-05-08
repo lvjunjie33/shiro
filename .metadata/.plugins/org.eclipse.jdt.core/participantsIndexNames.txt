@@ -1,0 +1,3 @@
+INDEX VERSION 1.130
+D:\workspace_shiro\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4089680366.index
+\Spring-Boot-Shiro-Authentication\src\main\java

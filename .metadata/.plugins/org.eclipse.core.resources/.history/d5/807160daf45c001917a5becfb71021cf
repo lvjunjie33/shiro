@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.dao.UserMapper">
+
+ <resultMap id="BaseResultMap" type="com.springboot.pojo.UserInfo" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="user_name_en" property="userNameEn" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" javaType="INTEGER"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+        <result column="head_portrait" property="headPortrait" jdbcType="VARCHAR" />
+        <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+        <result column="position_name" property="positionName" jdbcType="VARCHAR" />
+        <result column="voiceprint" property="voiceprint" jdbcType="VARCHAR" />
+        <result column="department" property="department" jdbcType="VARCHAR" />
+        <result column="phone_num" property="phoneNum" jdbcType="VARCHAR" />
+        <result column="work_mail" property="workMail" jdbcType="VARCHAR" />
+        <collection property="accountInfo" ofType="AccountInfo" column="id">
+			<id column="aid" property="id"/><!-- 这里的column对应的是下面查询的别名，而不是表字段名 -->
+		    <result column="user_id" property="userId"/>
+			<result column="account_num" property="accountNum"/>
+			<result column="passwd" property="passwd"/>
+			<result column="account_type" property="accountType"/>
+			<result column="create_time" property="createTime"/>
+			<result column="create_user_id" property="createUserId"/>
+			<result column="create_user_name" property="createUserName"/>
+		</collection>
+		<collection property="role" ofType="Role" column="id">
+ 			<id column="sid" property="id"/><!--这里的column对应的是下面查询的别名，而不是表字段名 -->
+			<result column="sname" property="name"/><!-- property对应JavaBean中的属性名 -->
+			<result column="className" property="className"/>
+		</collection>
+    </resultMap>
+    
+
+<select id="findByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+	select * from account_info ai where ai.account_num = #{userName}
+</select>
+
+</mapper>

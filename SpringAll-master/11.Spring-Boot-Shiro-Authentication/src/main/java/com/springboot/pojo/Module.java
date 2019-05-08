@@ -1,0 +1,62 @@
+package com.springboot.pojo;
+
+import java.io.Serializable;
+import java.util.Set;
+/**
+ * 资源实体
+ * @author lvjj
+ */
+public class Module implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
+	private int id;//主键
+	private String moduleName;//资源名称
+	private String moduleUrl;//资源路径
+	private int moduleType;//资源类型（1，菜单；2，按钮）
+	private int status;//状态（0，禁用，1，可用）
+	private Set<RoleInfo> roles;
+	
+
+
+	public int getModuleType() {
+		return moduleType;
+	}
+	public void setModuleType(int moduleType) {
+		this.moduleType = moduleType;
+	}
+	public Set<RoleInfo> getRoles() {
+		return roles;
+	}
+	public void setRoles(Set<RoleInfo> roles) {
+		this.roles = roles;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getModuleName() {
+		return moduleName;
+	}
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+	}
+	public String getModuleUrl() {
+		return moduleUrl;
+	}
+	public void setModuleUrl(String moduleUrl) {
+		this.moduleUrl = moduleUrl;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	
+	
+	
+}
